@@ -36,6 +36,9 @@ public abstract class MinecraftServerMixin extends ReentrantThreadExecutor<Serve
     @Nullable
     public abstract ServerWorld getWorld(RegistryKey<World> key);
 
+    @Shadow
+    protected abstract void shutdown();
+
     @Unique
     private boolean done = false;
 
@@ -45,7 +48,10 @@ public abstract class MinecraftServerMixin extends ReentrantThreadExecutor<Serve
 
     @Inject(method = "tick", at = @At("TAIL"))
     private void onTick(BooleanSupplier shouldKeepTicking, CallbackInfo ci) throws IOException {
-        if (done) return;
+        if (done) {
+            shutdown();
+            return;
+        }
         writeBiomes(false);
         writeBiomes(true);
         done = true;
