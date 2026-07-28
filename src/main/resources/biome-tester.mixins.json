@@ -1,8 +1,9 @@
 {
   "required": true,
-  "package": "dev.tildejustin.example.mixin",
+  "package": "me.duncanruns.biometester.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+    "MinecraftServerMixin"
   ],
   "client": [
   ],

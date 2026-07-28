@@ -1,21 +1,19 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "biome-tester",
   "version": "${version}",
   "name": "",
   "description": "",
   "authors": [
-    "tildejustin"
+    "DuncanRuns"
   ],
   "contact": {
-    "homepage": "https://modrinth.com/mod/modid",
-    "sources": "https://github.com/tildejustin/modid",
-    "issues": "https://github.com/tildejustin/modid/issues"
+    "sources": "https://github.com/DuncanRuns/Biome-Tester"
   },
   "license": "MPL-2.0",
   "environment": "*",
   "mixins": [
-    "modid.mixins.json"
+    "biome-tester.mixins.json"
   ],
   "depends": {
     "minecraft": "*",
